@@ -5,7 +5,7 @@
   --background-primary-alt: #36393f;
   --background-secondary: #202225;
   --background-secondary-alt: #000000;
-  --text-normal: #5dbcd2;
+  /* --text-normal: #5dbcd2; */
   --text-faint: #999999;
   --text-title-h1: #5dbcd2;
   --text-title-h2: #5dbcd2;
@@ -19,13 +19,13 @@
   --text-mark: rgb(252, 246, 1, 0.75); /* SEE HIGHLIGHTER */
   --pre-code: #272524d9;
   --text-highlight-bg: rgba(252, 246, 1, 0.4); /* SEE HIGHLIGHTER */
-  --interactive-accent: rgb(252, 246, 1, 0.95);
+  /* --interactive-accent: rgb(252, 246, 1, 0.95); */
   --interactive-before: #5e6565;
   --background-modifier-border: #595959;
   --blockquote-border: #9e8aff;
   --text-accent: #ff9640ba;
   --interactive-accent-rgb: #fe8019;
-  --font-family-editor: Avenir, Avenir Next, sans-serif;
+  /* --font-family-editor: Avenir, Avenir Next, sans-serif; */
   --font-family-preview: Avenir, Avenir Next, sans-serif;
 }
 
@@ -34,14 +34,14 @@
   stroke: var(--interactive-accent-rgb) !important;
 }
 
-strong {
+/* strong {
   color: rgb(252, 246, 1, 0.74);
   font-weight: 700;
 }
 
 em {
   color: #ad9df9;
-}
+} */
 
 
 /**********************/
@@ -165,10 +165,10 @@ code,
 }
 
 /* code and code blocks for preview */
-.markdown-preview-view code
+/* .markdown-preview-view code
 {
   font-size: 13.5px;
-}
+} */
 
 
 /**********/
@@ -421,7 +421,8 @@ side-dock-ribbon-tab-inner is-after-active {
     background-color: #1a1a1a;
 }
 
-.nav-file-tag{ color: #5dbcd2; } for the PNG text, but can't specifically target "PNG", just all of those filetype tags.
+.nav-file-tag{ color: #5dbcd2; }
+ /* for the PNG text, but can't specifically target "PNG", just all of those filetype tags. */
 .nav-file.is-active .nav-file-tag { color: #5dbcd2; }
 
 
@@ -524,7 +525,7 @@ side-dock-ribbon-tab-inner is-after-active {
 .cm-s-obsidian
 {
   font-family: var(--font-family-editor);
-  font-size: 15px;
+  /* font-size: 15px; */
   color: var(--text-normal);
   padding-left: 8% !important;
   padding-right: 4% !important;
@@ -533,7 +534,7 @@ side-dock-ribbon-tab-inner is-after-active {
 .mod-single-child .cm-s-obsidian
 {
   font-family: var(--font-family-editor);
-  font-size: 15px;
+  /* font-size: 15px; */
   color: var(--text-normal);
   padding-left: 8% !important;
   padding-right: 4% !important;
@@ -742,13 +743,13 @@ code
   color: var(--text-title-h3);
 }
 
-.code {
+/* .code {
     background-color: var(--grey) !important;
     border: 1px solid var(--background-modifier-border) !important;
-    border-color: #ba6ea0; !important;
+    border-color: #ba6ea0 !important;
 }
 
-
+ */
 
 
 
@@ -966,6 +967,7 @@ color: #b3a14b !important;
 
 /* this is where the magic happens */
 .view-header {
+  z-index: 2; /* it was otherwise not shown */
   writing-mode: vertical-lr;
   border-right: 1px solid var(--background-secondary-alt);
   border-left: 2px solid var(--background-secondary-alt);
@@ -985,10 +987,15 @@ color: #b3a14b !important;
   border-bottom: none;
 }
 
+.view-header-title {
+  line-height: 12px;
+  
+}
+
 /* unset the title container height and swap padding */
 .view-header-title-container {
   height: unset;
-  padding-left: unset;
+  padding-left: 5px;
   padding-top: 5px;
 }
 
@@ -1023,3 +1030,50 @@ color: #b3a14b !important;
   background-color: var(--background-primary);
 }
 
+/* 
+html,
+body {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 15px !important;
+  line-height: 24px !important;
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+} */
+
+.markdown-source-view,
+.markdown-preview-view {
+  background-color: #011627;
+}
+
+.CodeMirror-lines,
+.CodeMirror-selected,
+.markdown-preview-section {
+  max-width: 700px;
+  margin: auto;
+}
+
+.markdown-source-view {
+  font-family: "Dank Mono", Courier, monospace !important;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.view-content {
+  background-color: #011627;
+}
+
+h2,
+h3,
+.cm-header {
+  color: darkturquoise;
+}
+
+.cm-em {
+  color: deeppink;
+}
+
+.cm-strong {
+  color: deeppink;
+}
